@@ -51,10 +51,15 @@ jobs:
           else
           echo "stash@{0} inexistant → aucune action"
           fi
-          if git diff --name-only --diff-filter=U | grep -q .; then
+          if git diff --name-only --diff-filter=U -z | grep -q .; then
           echo "⚠️ Conflits détectés"
           git checkout --ours .
           git add -A
+          if git show origin/main:stats/repository-stats.svg \
+          | grep -nE '^(<<<<<<<|=======|>>>>>>>)';then
+          git checkout --ours .
+          git add -A
+          fi
           echo "✅ Conflits résolus avec ours"
           else
           echo "✅ Aucun conflit"

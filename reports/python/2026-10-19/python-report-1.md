@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 2714
+Run : 2722
 Branch : main
-Commit : 907c443abadb959b0ac037a12efb0748f42c6881
-Date : Mon Oct 19 00:02:42 UTC 2026
+Commit : 70b7fe865c1db955e0fb83f6b185a7893c2e9c18
+Date : Mon Oct 19 03:06:46 UTC 2026
 
 ---
 
@@ -49,8 +49,8 @@ Date : Mon Oct 19 00:02:42 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
@@ -2035,8 +2035,8 @@ Average complexity: A (4.120610687022901)
 [main]	INFO	cli include tests: None
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.8
-Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-10-19 00:02:52.069839+00:00
+Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:01
+Run started:2026-10-19 03:06:57.079871+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -7352,13 +7352,17 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 
         ciphertext.append(value)
         previous_ciphertext = value
+
+    # ========================================================
+    # DÉCHIFFREMENT
+    # ========================================================
  (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_rotor:[358:384]
 ==tests.test_rotor_integration:[36:73]
     original = value
 
-    # Forward : R1 → R16
+    # Forward : R1 -> R16
     for rotor, position in zip(
         rotors,
         positions,
@@ -7369,7 +7373,7 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
             rotor,
         )
 
-    # Inverse : R16 → R1
+    # Inverse : R16 -> R1
     for rotor, position in reversed(
         list(zip(rotors, positions))
     ):
@@ -7380,18 +7384,7 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
         )
 
     assert value == original
-@pytest.mark.parametrize(
-    "packet_type",
-    range(1, 10),
-)
-@pytest.mark.parametrize(
-    "value",
-    range(256),
-)
-def test_rotor_state_multiple_updates(
-    value,
-    packet_type,
-):
+def test_invalid_communication_key():
  (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[6:20]
@@ -7409,9 +7402,7 @@ IGNORED_DIRECTORIES = {
     "venv",
     "node_modules",
 }
-
-
-def should_ignore(path: Path) -> bool: (duplicate-code)
+ (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[6:18]
 ==.github.security.test_secrets:[6:18]
@@ -7487,15 +7478,15 @@ IGNORED_DIRECTORIES = {
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[21:31]
 ==.github.security.test_git_security:[166:176]
-        ".env",
-        ".env.local",
-        ".env.production",
-        "master.key",
-        "id_rsa",
-        "id_ed25519",
-        "credentials.json",
-        "service-account.json",
-    }
+    ".env",
+    ".env.local",
+    ".env.production",
+    "master.key",
+    "id_rsa",
+    "id_ed25519",
+    "credentials.json",
+    "service-account.json",
+}
  (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[101:112]
@@ -7756,17 +7747,17 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
             positions,
             byte_counter,
             previous_ciphertext, (duplicate-code)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.Deco) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.session) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.player_state) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.Deco) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.session) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.player_remove) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 
 -----------------------------------
 Your code has been rated at 7.66/10
@@ -7786,7 +7777,7 @@ platform linux -- Python 3.14.8, pytest-9.1.1, pluggy-1.7.0
 rootdir: /home/runner/work/The-last-signal-/The-last-signal-
 configfile: pytest.ini
 testpaths: tests
-plugins: platformdirs-4.13.4, cov-7.1.0
+plugins: platformdirs-4.13.5, cov-7.1.0
 collected 13734 items / 1 error
 
 ==================================== ERRORS ====================================
@@ -7797,7 +7788,7 @@ E   RuntimeError: DATABASE_PATH n'est pas définie
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.64s ===============================
+=============================== 1 error in 0.78s ===============================
 
 </details>
 
